@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Si Paling Sirkel</title>
+</head>
+
+<body>
+    <h1 class="title">Aku dan 7 Nasabahku</h1>
+    <h4>Maulana X Bank Syari'ah</h4>
+    <table class="tabelku">
+        <tr>
+            <th>No</th>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th colspan="2">Aksi</th>
+            
+        </tr>
+        <tr id="row__1">
+            <td>1</td>
+           <td >41226152</td>
+           <td class="nama_mhs">Maulana Sujarwadi</td>
+           <td>Kuningan</td>
+           <td class="ubah" id="ubah__1">Ubah</td>
+           <td class="hapus" id="hapus_1">Hapus</td>
+        </tr>
+        <tr id="row__2">
+            <td>2</td>
+            <td >41226149</td>
+            <td class="nama_mhs">Abimanyu</td>
+            <td>Majalengka</td>
+            <td class="ubah" id="ubah__2">Ubah</td>
+            <td class="hapus" id="hapus_2">Hapus</td>
+         </tr>
+         <tr id="row__3">
+            <td>3</td>
+            <td>41226122</td>
+            <td class="nama_mhs">Bagus Mustofa</td>
+            <td>Majalengka</td>
+            <td class="ubah" id="ubah__3">Ubah</td>
+            <td class="hapus" id="hapus_1">Hapus</td>
+         </tr>
+         <tr id="row__4">
+            <td>4</td>
+            <td>41226083</td>
+            <td class="nama_mhs">Ibnu Syna</td>
+            <td>Majalengka</td>
+            <td class="ubah" id="ubah__4">Ubah</td>
+            <td class="hapus" id="hapus_4">Hapus</td>
+         </tr>
+         <tr id="row__5">
+            <td>5</td>
+            <td>41226120</td>
+            <td class="nama_mhs">Dimas zimy</td>
+            <td>Majalengka</td>
+            <td class="ubah" id="ubah__5">Ubah</td>
+            <td class="hapus" id="hapus_5">Hapus</td>
+         </tr>
+         <tr id="row__6">
+            <td>6</td>
+            <td>41226064</td>
+            <td class="nama_mhs">Ainin Nurnabilah</td>
+            <td>Majalengka</td>
+            <td class="ubah" id="ubah__6">Ubah</td>
+            <td class="hapus" id="hapus_6">Hapus</td>
+         </tr>
+         <tr id="row__7">
+            <td>7</td>
+            <td>41226055</td>
+            <td class="nama_mhs">Siti Nur Alifah</td>
+            <td>Majalengka</td>
+            <td class="ubah" id="ubah__7">Ubah</td>
+            <td class="hapus" id="hapus_7">Hapus</td>
+         </tr>
+         <tr id="row__8">
+            <td>8</td>
+            <td>41226081</td>
+            <td class="nama_mhs">M Malik</td>
+            <td>Majalengka</td>
+            <td class="ubah" id="ubah__8">Ubah</td>
+            <td class="hapus" id="hapus_8">Hapus</td>
+         </tr>
+    </table>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+          //  alert(0)
+          $('.nama_mhs').click(function(){
+           // alert(1)
+           let isi = $(this).text();
+          //alert(isi);
+          let isi2 = prompt('Ubah dengan:', isi);
+          if (!isi2) return; 
+          //alert(isi2);
+          
+          $(this).text(isi2);
+          })
+
+          $('.ubah').click(function(){
+           // alert(1)
+           let yakin = confirm('Yakin mau ubah ?');
+           if(!yakin)return;
+           let id = $(this).prop('id');
+           alert(id);
+
+           //alert('Anda yakin')
+          })
+
+          $('.hapus').click(function(){
+           //alert(1)
+           let yakin = confirm('Yakin mau hapus ?');
+           if(!yakin)return;
+           let id = $(this).prop('id');
+           // alert(id);
+           
+            let rid = id.split('__')
+            let baris_ke = rid[1];
+
+            //alert(baris_ke);
+
+            $('#row__' + baris_ke).slideUp()
+
+           //alert('Anda yakin')
+
+          })
+        })
+    </script>
+
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            table-layout: auto;
+            background-color: #A97155;)
+        }
+        .title{
+           color: #E4D1B9;
+        }
+
+        h4 {
+            color: #E4D1B9;
+        }
+
+        th{
+            background: #E4D1B9 ;
+            height: 50px;
+        }
+        td{
+            background: #E4D1B9 ;
+            height: 25px;
+        }
+        td:hover{
+            background: #BE8C63;
+            transform: scale(1);
+            opacity: 100%;
+            box-shadow: 1px 1px 6px #E4D1B9;
+
+        }
+        .tabelku{
+            width: 100%;
+            max-width: none;
+            border: 2px solid;
+            text-align: center;
+            position: sticky;
+            border-color: #BE8C63;
+            padding: 10px;
+        }
+        span{
+            background: #E4D1B9 ;
+            border-radius: 10px;
+            padding: 15px 20px 15px 20px;
+            color: black;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            position:relative;
+            top: 20px;
+            float: right;
+
+        }
+
+        span:hover{
+            background: #BE8C63 ;
+            border-radius: 10px;
+            padding: 15px 20px 15px 20px;
+            color: black;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            position:relative;
+            box-shadow: 1px 1px 6px #E4D1B9;
+        }
+
+
+
+        
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            alert(0)
+        })
+    </script>
+
+    <br>
+    <span onclick="history.go(-1)">Back to menu</span>
+</body>
+</htmlS
